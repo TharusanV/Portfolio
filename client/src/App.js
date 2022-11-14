@@ -5,7 +5,8 @@ import * as THREE from "three";
 
 import Ground from './components/Ground';
 import { House } from './components/House';
-
+import { TextCreator } from './components/TextCreator';
+import RectAreaLightCreator from './components/RectAreaLightCreator';
 
 import './style.css'
 
@@ -13,18 +14,35 @@ import './style.css'
 
 function App() {
   return (
-    <Canvas camera={{fov: 120}}>
+    <Canvas >
       <Suspense fallback={null}>
 
-        <OrbitControls target={[0, 0, -20]} maxPolarAngle={Math.PI / 2} minPolarAngle={0} />
+        <OrbitControls target={[0, 0, -5]} maxPolarAngle={Math.PI / 2} minPolarAngle={0.5} />
+        <PerspectiveCamera makeDefault fov={60} position={[-10, 0, 40]} />
 
-        <fog attach="fog" args={["black", 1, 50]} />
-        <directionalLight intensity={0.05} />
-        <pointLight intensity={0.5} color="blue" position={[-10,0,-10]} />
-        <pointLight intensity={0.5} color="purple" position={[10,0,-10]} />
-       
-        
+        <spotLight
+          color={[1, 0.25, 0.7]}
+          intensity={0.5}
+          angle={1}
+          penumbra={0.2}
+          position={[-75, 10, -40]}
+          shadow-bias={-0.0001}
+        />
+
+        <spotLight
+          color={[0.14, 0.5, 1]}
+          intensity={0.5}
+          angle={1}
+          penumbra={0.2}
+          position={[75, 10, -40]}
+          shadow-bias={-0.0001}
+        />
+
+        <ambientLight intensity={0.03} />
+
         <House/>
+        <TextCreator position={[5,-1,10]} rotation={[-Math.PI / 2, 0, 0]} text={'Tharusan'}/>
+        <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
         <Ground />
           
       </Suspense>

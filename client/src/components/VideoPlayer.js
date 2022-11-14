@@ -1,8 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const VideoPlayer = () => {
+const VideoPlayer = (props) => {
+  
+  const [video] = useState(() => {
+    const vid = document.createElement("video");
+    vid.src = props.url;
+    vid.crossOrigin = "Anonymous";
+    vid.loop = true;
+    vid.muted = true;
+    vid.play();
+    return vid;
+  });
+
   return (
-    <div>VideoPlayer</div>
+    <mesh rotation={props.rotation} position={props.position}>
+      <planeGeometry args={props.size} />
+      <meshStandardMaterial emissive={"white"} side={THREE.DoubleSide}>
+        <videoTexture attach="map" args={[video]} />
+        <videoTexture attach="emissiveMap" args={[video]} />
+      </meshStandardMaterial>
+    </mesh>    
   )
 }
 
