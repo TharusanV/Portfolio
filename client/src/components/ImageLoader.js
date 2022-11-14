@@ -1,12 +1,13 @@
-import { useLoader } from 'react-three-fiber'
+import { useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
+import img from '../assets/logos/clickscroll.png'
 
 export const ImageLoader = (props) => {
-  const texture = useLoader(THREE.TextureLoader, props.img)
+  const texture = useLoader(THREE.TextureLoader, img)
   return (
-    <mesh rotation={props.rotation} position={props.size}>
-      <planeBufferGeometry attach="geometry" args={props.size} />
-      <meshBasicMaterial attach="material" map={texture} roughness={0.1} metalness={0} />
+    <mesh>
+      <planeBufferGeometry attach="geometry" args={[30, 30]} />
+      <meshBasicMaterial emissiveIntensity={50} side={THREE.DoubleSide} attach="material" map={texture} />
     </mesh>
   )
 }

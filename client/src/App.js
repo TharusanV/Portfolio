@@ -22,12 +22,12 @@ import url_2 from './assets/videos/film.mp4'
 import url_3 from './assets/videos/football.mp4'
 import url_4 from './assets/videos/game.mp4'
 import url_5 from './assets/videos/music.mp4'
+import url_6 from './assets/videos/click-and-scroll.mp4'
 
 import { useSpring } from '@react-spring/web';
 import { Lightmap } from '@react-three/lightmap';
 import { Banner } from './components/Banner';
-
-
+import { ImageLoader } from './components/ImageLoader';
 
 function SelectToZoom({ children }) {
   const api = useBounds()
@@ -42,9 +42,9 @@ function App() {
   return (
     <>
       <Suspense fallback={<Loading/>}>
-        <Canvas>
-          <OrbitControls target={[0, 0, -5]} maxPolarAngle={Math.PI / 2} minPolarAngle={0.5} />
-          <PerspectiveCamera makeDefault fov={55} position={[-12, 1, 40]} />
+        <Canvas camera={{ position: [-12, 1, 40], fov: 55 }} dpr={[1, 2]}>
+          <OrbitControls makeDefault maxPolarAngle={Math.PI / 2} minPolarAngle={0.5} />
+    
 
           <spotLight
             color={[1, 0.25, 0.7]}
@@ -64,27 +64,31 @@ function App() {
             shadow-bias={-0.0001}
           />
 
-
           <ambientLight intensity={0.03} />
+
+          <Bounds fit clip observe margin={1}>
+            <SelectToZoom>
+              <Banner position={[-15, 13.95, 5.5]} size={[0.7,1,1]} color={"yellow"} rotation={[-Math.PI / 2, 0, 0]}/>
+              <VideoPlayer url={url_6} position={[5.9, 9.1, 2.19]} size={[4.55,2.6]} rotation={[0, 0, Math.PI*2]}/>
+
+              <VideoPlayer url={url_1} position={[9.3, 4.48, -5.22]} size={[3,1.63]} rotation={[0, -Math.PI/2, 0]}/>
+              <VideoPlayer url={url_2} position={[-2.7, 6.7, -3.1]} size={[2.5,2.75]} rotation={[0, -Math.PI/2, 0]} />
+              <VideoPlayer url={url_5} position={[5, 14, -20]} size={[5,3]} rotation={[0, 0, 0]}/>
+              <VideoPlayer url={url_4} position={[-6.5, 14, -20]} size={[5,3]} rotation={[0, 0, 0]}/>
+              <VideoPlayer url={url_3} position={[-0.75, 14, -20]} size={[6,3]} rotation={[0, 0, 0]}/>
+
+              <TextCreator position={[5,-1,10]} rotation={[-Math.PI / 2, 0, 0]} text={'Tharusan'}/>
+              <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
+
+              <VendingMachine />
+
+            </SelectToZoom>
+          </Bounds>
           
-          <Banner position={[-15, 13.95, 5.5]} size={[0.7,1]} color={"yellow"} rotation={[-Math.PI / 2, 0, 0]}/>
-          <LampPost />
-
-          <Banner position={[5.9, 9.1, 2.19]} size={[4.55,2.6]} rotation={[0, 0, Math.PI*2]}/>
-          <VideoPlayer url={url_1} position={[9.3, 4.48, -5.22]} size={[3,1.63]} rotation={[0, -Math.PI/2, 0]}/>
-          <VideoPlayer url={url_2} position={[-2.7, 6.7, -3.1]} size={[2.5,2.75]} rotation={[0, -Math.PI/2, 0]} />
-          <VideoPlayer url={url_5} position={[5, 14, -20]} size={[5,3]} rotation={[0, 0, 0]}/>
-          <VideoPlayer url={url_4} position={[-6.5, 14, -20]} size={[5,3]} rotation={[0, 0, 0]}/>
-          <VideoPlayer url={url_3} position={[-0.75, 14, -20]} size={[6,3]} rotation={[0, 0, 0]}/>
-
-          <TextCreator position={[5,-1,10]} rotation={[-Math.PI / 2, 0, 0]} text={'Tharusan'}/>
-          <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
-
-
-          <VendingMachine />
-
           <House/>
+          <LampPost />
           <Ground />
+
         </Canvas>
       </Suspense>
     </>
