@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import * as THREE from 'three' 
 
 const VideoPlayer = (props) => {
   
@@ -15,7 +16,7 @@ const VideoPlayer = (props) => {
   return (
     <mesh rotation={props.rotation} position={props.position}>
       <planeGeometry args={props.size} />
-      <meshStandardMaterial emissive={"white"} side={THREE.DoubleSide}>
+      <meshStandardMaterial  side={THREE.DoubleSide}>
         <videoTexture attach="map" args={[video]} />
         <videoTexture attach="emissiveMap" args={[video]} />
       </meshStandardMaterial>

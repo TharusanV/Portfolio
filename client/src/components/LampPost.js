@@ -10,7 +10,7 @@ export const LampPost = () => {
   );
 
   useEffect(() => {
-    gltf.scene.scale.set(2, 3, 2);
+    gltf.scene.scale.set(2, 2.5, 2);
     gltf.scene.position.set(-15, -2, 2);
     
     gltf.scene.traverse((object) => {
