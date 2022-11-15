@@ -66,12 +66,16 @@ function App() {
 
           <ambientLight intensity={0.03} />
 
+          <mesh rotation={[0, -Math.PI/2, 0]} position={props.position}>
+            <planeBufferGeometry args={[5,5]} />
+            <meshBasicMaterial emissiveIntensity={10} color={0xffff00} side={THREE.DoubleSide} roughness={0.1} metalness={0} />
+          </mesh>
+
           <Bounds fit clip observe margin={1}>
             <SelectToZoom>
-              <Banner position={[-15, 13.95, 5.5]} size={[0.7,1,1]} color={"yellow"} rotation={[-Math.PI / 2, 0, 0]}/>
-              <VideoPlayer url={url_6} position={[5.9, 9.1, 2.19]} size={[4.55,2.6]} rotation={[0, 0, Math.PI*2]}/>
+              <VideoPlayer url={url_6} position={[5.75, 9.2, 2.19]} size={[5.1,2.9]} rotation={[0, 0, Math.PI*2]}/>
 
-              <VideoPlayer url={url_1} position={[9.3, 4.48, -5.22]} size={[3,1.63]} rotation={[0, -Math.PI/2, 0]}/>
+              <VideoPlayer url={url_1} position={[9.237, 4.48, -5.225]} size={[3.075,1.76]} rotation={[0, -Math.PI/2, 0]}/>
               <VideoPlayer url={url_2} position={[-2.7, 6.7, -3.1]} size={[2.5,2.75]} rotation={[0, -Math.PI/2, 0]} />
               <VideoPlayer url={url_5} position={[5, 14, -20]} size={[5,3]} rotation={[0, 0, 0]}/>
               <VideoPlayer url={url_4} position={[-6.5, 14, -20]} size={[5,3]} rotation={[0, 0, 0]}/>
@@ -81,12 +85,12 @@ function App() {
               <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
 
               <VendingMachine />
-
             </SelectToZoom>
           </Bounds>
           
           <House/>
           <LampPost />
+          <Banner position={[-15, 13.95, 5.7]} size={[0.7,1,1]} color={"yellow"} rotation={[-Math.PI / 2, 0, 0]}/>
           <Ground />
 
         </Canvas>
