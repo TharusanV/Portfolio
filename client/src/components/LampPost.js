@@ -10,8 +10,8 @@ export const LampPost = () => {
   );
 
   useEffect(() => {
-    gltf.scene.scale.set(2, 2.5, 2);
-    gltf.scene.position.set(-15, -2, 2);
+    gltf.scene.scale.set(2, 4.25, 2);
+    gltf.scene.position.set(20, -2, 2);
     
     gltf.scene.traverse((object) => {
       if (object instanceof Mesh) {
