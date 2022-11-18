@@ -25,6 +25,7 @@ import url_5 from './assets/videos/music.mp4'
 import url_6 from './assets/videos/click-and-scroll.mp4'
 import url_7 from './assets/videos/for-hire.mp4'
 import url_8 from './assets/videos/about-me.mp4'
+import url_9 from './assets/videos/mylogo.mp4'
 
 import { useSpring } from '@react-spring/web';
 import { Lightmap } from '@react-three/lightmap';
@@ -45,31 +46,48 @@ function App() {
     <>
       <Suspense fallback={<Loading/>}>
         <Canvas camera={{ position: [-12, 1, 40], fov: 55 }} dpr={[1, 2]}>
-          <OrbitControls makeDefault maxPolarAngle={Math.PI / 2} minPolarAngle={0} />
+          <OrbitControls makeDefault maxPolarAngle={Math.PI / 2} minPolarAngle={0}/>
     
 
           <spotLight
             color={[1, 0.25, 0.7]}
-            intensity={0.5}
+            intensity={1}
             angle={1}
             penumbra={0.2}
-            position={[-75, 10, -40]}
+            position={[-25, 10, -20]}
             shadow-bias={-0.0001}
           />
 
           <spotLight
             color={[0.14, 0.5, 1]}
-            intensity={0.5}
+            intensity={1}
             angle={1}
             penumbra={0.2}
-            position={[75, 10, -40]}
+            position={[25, 10, -20]}
             shadow-bias={-0.0001}
           />
 
           <ambientLight intensity={0.03} />
 
+          <mesh position={[3, 8.5, -18.5]} scale={2.5}>
+            <boxGeometry />
+            <meshPhongMaterial color="#ff0000" opacity={0.01} transparent />
+          </mesh>
+
+          <mesh position={[-0.9, 8.6, -18.5]} scale={2.5}>
+            <boxGeometry />
+            <meshPhongMaterial color="#ff0000" opacity={0.01} transparent />
+          </mesh>
+
+          <mesh position={[-4.5, 8.6, -18.5]} scale={2.5}>
+            <boxGeometry />
+            <meshPhongMaterial color="#ff0000" opacity={0.01} transparent />
+          </mesh>
+
           <Bounds fit clip observe margin={1.4}>
             <SelectToZoom>
+              <VideoPlayer url={url_9} position={[-6.5, 8.3, -11.3]} size={[9,15.5]} rotation={[0, -0.8, Math.PI*2]}/>
+
               <VideoPlayer url={url_6} position={[5.75, 9.2, 2.19]} size={[5.1,2.9]} rotation={[0, 0, Math.PI*2]}/>
               <VideoPlayer url={url_7} position={[3, 22, -7.5]} size={[11,7]} rotation={[0, 0, Math.PI*2]}/>
               <VideoPlayer url={null} position={[3, 22, -8.5]} size={[11,7]} rotation={[0, 0, Math.PI*2]}/>
@@ -90,8 +108,17 @@ function App() {
           </Bounds>
           
           <House/>
+
           <LampPost />
-          <Banner position={[20, 25.15, 5.7]} size={[0.7,1,1]} color={"yellow"} rotation={[-Math.PI / 2, 0, 0]}/>
+          <mesh rotation={[-Math.PI / 2, 0, 0]} position={[20, 25.15, 5.7]}>
+            <planeBufferGeometry args={[0.7,1,1]} />
+            <meshBasicMaterial emissiveIntensity={50} color={0xffff00} side={THREE.DoubleSide} roughness={0.1} metalness={0} />
+          </mesh>
+
+          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 13, 2.3]} backgroundColour='#00FFFF' backgroundPos={[20, 13, 2.35]} backgroundSize={[6.2,1.5]} size={[7,2]} textPosition={[17.9, 12.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"Projects"}/>
+          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 9, 2.3]} backgroundColour='red' backgroundPos={[20, 9, 2.35]} backgroundSize={[5.2,1.5]} size={[6,2]} textPosition={[18.2, 8.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"About"}/>
+          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 5, 2.3]} backgroundColour='yellow' backgroundPos={[20, 5, 2.35]} backgroundSize={[4.2,1.5]} size={[5,2]} textPosition={[18.1, 4.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"Credits"}/>
+
           <Ground />
 
         </Canvas>
