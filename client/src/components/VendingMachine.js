@@ -1,7 +1,15 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Mesh } from "three";
+import * as THREE from 'three'
+import { extend } from '@react-three/fiber'
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
+import myFont from '../fonts/RobotoSlab/Roboto Slab_Bold.json'
+
+import img from '../assets/logos/portfolio_logo.png'
+extend({ TextGeometry })
 
 export const VendingMachine = () => {
   const gltf = useLoader(
@@ -23,7 +31,17 @@ export const VendingMachine = () => {
     });
   }, [gltf]);
 
+  const texture = useLoader(THREE.TextureLoader, img)
+  const font = new FontLoader().parse(myFont);
+  
+
   return (
-    <primitive object={gltf.scene} />
+    <>
+      <group>
+        <primitive object={gltf.scene} />
+      </group>
+    </>
+
+    
   )
 }

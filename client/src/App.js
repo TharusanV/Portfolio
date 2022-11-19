@@ -27,10 +27,10 @@ import url_7 from './assets/videos/for-hire.mp4'
 import url_8 from './assets/videos/about-me.mp4'
 import url_9 from './assets/videos/mylogo.mp4'
 
-import { useSpring } from '@react-spring/web';
-import { Lightmap } from '@react-three/lightmap';
 import { Banner } from './components/Banner';
-import { ImageLoader } from './components/ImageLoader';
+import {ProjectCuboid} from './components/ProjectCuboid'
+
+import { Stats } from '@react-three/drei';
 
 function SelectToZoom({ children }) {
   const api = useBounds()
@@ -47,7 +47,8 @@ function App() {
       <Suspense fallback={<Loading/>}>
         <Canvas camera={{ position: [-12, 1, 40], fov: 55 }} dpr={[1, 2]}>
           <OrbitControls makeDefault maxPolarAngle={Math.PI / 2} minPolarAngle={0}/>
-    
+
+          <Stats/>    
 
           <spotLight
             color={[1, 0.25, 0.7]}
@@ -114,11 +115,14 @@ function App() {
             <planeBufferGeometry args={[0.7,1,1]} />
             <meshBasicMaterial emissiveIntensity={50} color={0xffff00} side={THREE.DoubleSide} roughness={0.1} metalness={0} />
           </mesh>
+          
 
-          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 13, 2.3]} backgroundColour='#00FFFF' backgroundPos={[20, 13, 2.35]} backgroundSize={[6.2,1.5]} size={[7,2]} textPosition={[17.9, 12.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"Projects"}/>
+          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 16, 2.3]} backgroundColour='green' backgroundPos={[20, 16, 2.35]} backgroundSize={[3.2,1.5]} size={[4,2]} textPosition={[19.1, 15.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"CV"}/>
+          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 13, 2.3]} backgroundColour='#00FFFF' backgroundPos={[20, 13, 2.35]} backgroundSize={[6.2,1.5]} size={[7,2]} textPosition={[17.9, 12.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"GitHub"}/>
           <Banner rotation={[0, 0, Math.PI*2]} position={[20, 9, 2.3]} backgroundColour='red' backgroundPos={[20, 9, 2.35]} backgroundSize={[5.2,1.5]} size={[6,2]} textPosition={[18.2, 8.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"About"}/>
           <Banner rotation={[0, 0, Math.PI*2]} position={[20, 5, 2.3]} backgroundColour='yellow' backgroundPos={[20, 5, 2.35]} backgroundSize={[4.2,1.5]} size={[5,2]} textPosition={[18.1, 4.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"Credits"}/>
 
+          <ProjectCuboid/>
           <Ground />
 
         </Canvas>
