@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import React, {Suspense, useEffect} from 'react';
 import * as THREE from "three";
 import { Bounds, useBounds } from '@react-three/drei'
-
+import { useThree } from '@react-three/fiber';
 
 import Ground from './components/Ground';
 import { House } from './components/House';
@@ -14,8 +14,6 @@ import Loading from './components/Loading';
 import { LampPost } from './components/LampPost';
 import { VendingMachine } from './components/VendingMachine';
 import VideoPlayer from './components/VideoPlayer';
-
-import { useThree } from '@react-three/fiber';
 
 import url_1 from './assets/videos/anime.mp4'
 import url_2 from './assets/videos/film.mp4'
@@ -29,6 +27,8 @@ import url_9 from './assets/videos/mylogo.mp4'
 
 import { Banner } from './components/Banner';
 import {ProjectCuboid} from './components/ProjectCuboid'
+import { Linker } from './components/Linker';
+import { Credits } from './components/Credits';
 
 import { Stats } from '@react-three/drei';
 
@@ -47,8 +47,8 @@ function App() {
       <Suspense fallback={<Loading/>}>
         <Canvas camera={{ position: [-12, 1, 40], fov: 55 }} dpr={[1, 2]}>
           <OrbitControls makeDefault maxPolarAngle={Math.PI / 2} minPolarAngle={0}/>
-
-          <Stats/>    
+          
+          <Linker/> 
 
           <spotLight
             color={[1, 0.25, 0.7]}
@@ -70,21 +70,6 @@ function App() {
 
           <ambientLight intensity={0.03} />
 
-          <mesh position={[3, 8.5, -18.5]} scale={2.5}>
-            <boxGeometry />
-            <meshPhongMaterial color="#ff0000" opacity={0.01} transparent />
-          </mesh>
-
-          <mesh position={[-0.9, 8.6, -18.5]} scale={2.5}>
-            <boxGeometry />
-            <meshPhongMaterial color="#ff0000" opacity={0.01} transparent />
-          </mesh>
-
-          <mesh position={[-4.5, 8.6, -18.5]} scale={2.5}>
-            <boxGeometry />
-            <meshPhongMaterial color="#ff0000" opacity={0.01} transparent />
-          </mesh>
-
           <Bounds fit clip observe margin={1.4}>
             <SelectToZoom>
               <VideoPlayer url={url_9} position={[-6.5, 8.3, -11.3]} size={[9,15.5]} rotation={[0, -0.8, Math.PI*2]}/>
@@ -103,6 +88,7 @@ function App() {
 
               <TextCreator position={[5,-1,10]} rotation={[-Math.PI / 2, 0, 0]} text={'Tharusan'}/>
               <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
+              <Credits/>   
 
               <VendingMachine />
             </SelectToZoom>
@@ -117,11 +103,9 @@ function App() {
           </mesh>
           
 
-          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 16, 2.3]} backgroundColour='green' backgroundPos={[20, 16, 2.35]} backgroundSize={[3.2,1.5]} size={[4,2]} textPosition={[19.1, 15.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"CV"}/>
-          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 13, 2.3]} backgroundColour='#00FFFF' backgroundPos={[20, 13, 2.35]} backgroundSize={[6.2,1.5]} size={[7,2]} textPosition={[17.9, 12.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"GitHub"}/>
-          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 9, 2.3]} backgroundColour='red' backgroundPos={[20, 9, 2.35]} backgroundSize={[5.2,1.5]} size={[6,2]} textPosition={[18.2, 8.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"About"}/>
-          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 5, 2.3]} backgroundColour='yellow' backgroundPos={[20, 5, 2.35]} backgroundSize={[4.2,1.5]} size={[5,2]} textPosition={[18.1, 4.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"Credits"}/>
-
+          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 16, 2.3]} backgroundColour='red' backgroundPos={[20, 16, 2.35]} backgroundSize={[3.2,1.5]} size={[4,2]} textPosition={[19.1, 15.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"CV"}/>
+          <Banner rotation={[0, 0, Math.PI*2]} position={[20, 13, 2.3]} backgroundColour='yellow' backgroundPos={[20, 13, 2.35]} backgroundSize={[6.2,1.5]} size={[7,2]} textPosition={[17.9, 12.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"GitHub"}/>
+          
           <ProjectCuboid/>
           <Ground />
 

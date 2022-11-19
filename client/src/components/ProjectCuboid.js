@@ -13,12 +13,17 @@ import project_7 from '../assets/project/project-7.png'
 import project_8 from '../assets/project/project-8.png'
 import topBottom from '../assets/project/top-bottom.png'
 
+function githubLink() {
+  window.open("https://github.com/TharusanV?tab=repositories");
+}
+
+
 export const ProjectCuboid = () => {
 
   const firstCuboid = useTexture([
     project_1, project_2, topBottom, topBottom, project_4, project_3
   ])
-
+  
   const secondCuboid = useTexture([
     project_5, project_6, topBottom, topBottom, project_8, project_7
   ])
@@ -35,7 +40,7 @@ export const ProjectCuboid = () => {
 
 
   return (
-    <group>
+    <group onClick={githubLink}>
       <mesh ref={myMesh1} position={[-50, 15, -20]}>
         <boxBufferGeometry attach="geometry" args={[10, 20, 10]} />
         {firstCuboid.map((texture, idx) =>
@@ -49,8 +54,6 @@ export const ProjectCuboid = () => {
           <meshBasicMaterial key={texture.id} attach={`material-${idx}`} map={texture} />
         )}
       </mesh>
-
-
     </group>
   )
 }
