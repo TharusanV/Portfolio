@@ -1,11 +1,11 @@
 {
   "homepage": "https://TharusanV.github.io/Portfolio",
-  "name": "tharusanv",
+  "name": "full",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@react-spring/web": "^9.5.5",
-    "@react-three/drei": "^9.40.0",
+    "@react-three/drei": "^9.41.0",
     "@react-three/fiber": "^8.9.1",
     "@react-three/lightmap": "^0.0.8",
     "@react-three/postprocessing": "^2.7.0",
@@ -16,7 +16,7 @@
     "three": "^0.146.0"
   },
   "scripts": {
-    "predeploy": "npm-run-build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -24,7 +24,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
