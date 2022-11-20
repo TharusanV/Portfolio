@@ -14,7 +14,7 @@ extend({ TextGeometry })
 export const VendingMachine = () => {
   const gltf = useLoader(
     GLTFLoader,
-    process.env.PUBLIC_URL + "models/vending_machine.glb"
+    process.env.PUBLIC_URL + "/models/vending_machine.glb"
   );
 
   useEffect(() => {

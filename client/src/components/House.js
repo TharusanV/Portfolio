@@ -6,7 +6,7 @@ import { Mesh } from "three";
 export const House = () => {
   const gltf = useLoader(
     GLTFLoader,
-    process.env.PUBLIC_URL + "models/japanese_house_2.0.glb"
+    process.env.PUBLIC_URL + "/models/japanese_house_2.0.glb"
   );
   
   useEffect(() => {

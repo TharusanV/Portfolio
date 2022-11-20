@@ -6,7 +6,7 @@ import { Mesh } from "three";
 export const LampPost = () => {
   const gltf = useLoader(
     GLTFLoader,
-    process.env.PUBLIC_URL + "models/street_light.glb"
+    process.env.PUBLIC_URL + "/models/street_light.glb"
   );
 
   useEffect(() => {
