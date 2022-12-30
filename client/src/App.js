@@ -12,7 +12,6 @@ import { TextCreator } from './components/TextCreator';
 import './style.css'
 import Loading from './components/Loading';
 import { LampPost } from './components/LampPost';
-import { VendingMachine } from './components/VendingMachine';
 import VideoPlayer from './components/VideoPlayer';
 
 import url_1 from './assets/videos/anime.mp4'
@@ -76,7 +75,6 @@ function App() {
 
               <VideoPlayer url={url_6} position={[5.75, 9.2, 2.19]} size={[5.1,2.9]} rotation={[0, 0, Math.PI*2]}/>
               <VideoPlayer url={url_7} position={[3, 22, -7.5]} size={[11,7]} rotation={[0, 0, Math.PI*2]}/>
-              <VideoPlayer url={null} position={[3, 22, -8.5]} size={[11,7]} rotation={[0, 0, Math.PI*2]}/>
               <VideoPlayer url={url_8} position={[-0.75, 9, -19.5]} size={[18,13]} rotation={[0, Math.PI, Math.PI*2]}/>
 
               <VideoPlayer url={url_1} position={[9.237, 4.48, -5.225]} size={[3.075,1.76]} rotation={[0, Math.PI/2, 0]}/>
@@ -85,16 +83,14 @@ function App() {
               <VideoPlayer url={url_5} position={[9.2, 9.3, -0.5]} size={[4.5,3]} rotation={[0, Math.PI/2, 0]}/>
               <VideoPlayer url={url_4} position={[8.55, 3.5, -11]} size={[5,2.5]} rotation={[0, Math.PI/2, 0]}/>
               <VideoPlayer url={url_3} position={[8.55, 0.75, -11]} size={[5,2.5]} rotation={[0, Math.PI/2, 0]}/>
-
-              <TextCreator position={[5,-1,10]} rotation={[-Math.PI / 2, 0, 0]} text={'Tharusan'}/>
-              <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
-              <Credits/>   
-
-              <VendingMachine />
             </SelectToZoom>
+            <TextCreator position={[5,-1,10]} rotation={[-Math.PI / 2, 0, 0]} text={'Tharusan'}/>
+            <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
+            
           </Bounds>
           
           <House/>
+          <VideoPlayer url={null} position={[3, 22, -8.5]} size={[11,7]} rotation={[0, 0, Math.PI*2]}/>
 
           <LampPost />
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[20, 25.15, 5.7]}>
