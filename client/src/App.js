@@ -12,7 +12,6 @@ import { TextCreator } from './components/TextCreator';
 import './style.css'
 import Loading from './components/Loading';
 import { LampPost } from './components/LampPost';
-import { VendingMachine } from './components/VendingMachine';
 import VideoPlayer from './components/VideoPlayer';
 
 import url_1 from './assets/videos/anime.mp4'
@@ -26,7 +25,6 @@ import url_8 from './assets/videos/about-me.mp4'
 import url_9 from './assets/videos/mylogo.mp4'
 
 import { Banner } from './components/Banner';
-import {ProjectCuboid} from './components/ProjectCuboid'
 import { Linker } from './components/Linker';
 import { Credits } from './components/Credits';
 
@@ -87,10 +85,7 @@ function App() {
               <VideoPlayer url={url_3} position={[8.55, 0.75, -11]} size={[5,2.5]} rotation={[0, Math.PI/2, 0]}/>
 
               <TextCreator position={[5,-1,10]} rotation={[-Math.PI / 2, 0, 0]} text={'Tharusan'}/>
-              <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>
-              <Credits/>   
-
-              <VendingMachine />
+              <TextCreator position={[3,-1,13]} rotation={[-Math.PI / 2, 0, 0]} text={'Vijayakumar'}/>  
             </SelectToZoom>
           </Bounds>
           
@@ -106,7 +101,6 @@ function App() {
           <Banner rotation={[0, 0, Math.PI*2]} position={[20, 16, 2.3]} backgroundColour='red' backgroundPos={[20, 16, 2.35]} backgroundSize={[3.2,1.5]} size={[4,2]} textPosition={[19.1, 15.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"CV"}/>
           <Banner rotation={[0, 0, Math.PI*2]} position={[20, 13, 2.3]} backgroundColour='yellow' backgroundPos={[20, 13, 2.35]} backgroundSize={[6.2,1.5]} size={[7,2]} textPosition={[17.9, 12.7, 2.5]} textRotation={[0, 0, Math.PI*2]} text={"GitHub"}/>
           
-          <ProjectCuboid/>
           <Ground />
 
         </Canvas>
