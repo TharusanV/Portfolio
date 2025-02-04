@@ -80,3 +80,35 @@
     line-height: 40px;
   }
 }
+
+
+
+
+
+
+
+.downIcon-container{
+  position: absolute;
+  bottom: 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 450px) {
+  .downIcon-container {
+    bottom: 2.5rem;
+  }
+}
+
+.downIcon-oval{
+  width: 35px;
+  height: 64px;
+  border-radius: 1.5rem; 
+  border: 4px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px; 
+}

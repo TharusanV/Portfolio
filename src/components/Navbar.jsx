@@ -53,7 +53,7 @@ const Navbar = () => {
 
           <div
             style={{ display: toggle ? "flex" : "none" }}
-            className={"hamburgerMenu-container"}
+            className="hamburgerMenu-container  black-gradient"
           >
             <ul className="hamburgerMenu-nav-links">
               {navLinks.map((nav) => (
