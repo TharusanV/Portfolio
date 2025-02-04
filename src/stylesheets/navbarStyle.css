@@ -56,6 +56,9 @@
 
 
 
+
+
+
 .nav-links {
   list-style: none;
   display: none;
@@ -80,4 +83,54 @@
 .nav-item:hover,
 .nav-item.active {
   color: white;
+}
+
+
+
+
+
+
+
+
+.hamburger-container{
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .hamburger-container{
+    display: none;
+  }
+}
+
+.hamburger-icon{
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.hamburgerMenu-container{
+  padding: 1.5rem;
+  position: absolute;
+  top: 5rem;
+  right: 0px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  min-width: 140px;
+  z-index: 10;
+  border-radius: 0.75rem
+}
+
+.hamburgerMenu-nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 1 1 0%;
+  flex-direction: column;
+  gap: 1rem;
 }
