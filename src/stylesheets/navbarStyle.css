@@ -85,7 +85,16 @@
   color: white;
 }
 
+.nav-item a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from .nav-item */
+  display: block; /* Ensure full area is clickable */
+}
 
+.nav-item:hover a,
+.nav-item.active a {
+  color: white;
+}
 
 
 
