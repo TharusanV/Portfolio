@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion";
 
 import '../stylesheets/heroStyle.css'
-import { wolf } from "../assets";
+import { wolf, github } from "../assets";
 
 const Hero = () => {
   return (
@@ -11,75 +11,19 @@ const Hero = () => {
         <div>
           <motion.h1
             className="hero-header-text"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25, duration: 1 }}       
-          >
-            {"<div>"} 
-          </motion.h1>
-
-
-          <motion.h1
-            className="hero-header-text"
             initial={{ opacity: 0, y: 20 }} // Start hidden & slightly lower
             animate={{ opacity: 1, y: 0 }} // Fade in & move up
             transition={{ delay: 1, duration: 1, ease: "easeOut" }} // Smooth animation
             style={{paddingLeft: "40px"}}
           >
-            {"<h1> "} 
-            <motion.span
-              className="hero-header-span"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2, duration: 1 }} // Delay span for a staggered effect
-            >
-              Hi, I'm Tharusan
-            </motion.span>
-            {" </h1>"}
+            Hi, I'm Tharusan 
           </motion.h1>
-
-          <motion.p 
-            className="hero-header-text" 
-            initial={{ opacity: 0, y: 20 }} // Start hidden & slightly lower
-            animate={{ opacity: 1, y: 0 }} // Fade in & move up
-            transition={{ delay: 1, duration: 1, ease: "easeOut" }} // Smooth animation
-            style={{paddingLeft: "40px"}}
-          >
-            {"<p>"} 
-            <motion.span
-              className="hero-header-span"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2, duration: 1 }}
-            >
-              {" CS Graduate "}
-            </motion.span>
-            {"</p>"} 
-          </motion.p>
-
-          <motion.h1
-            className="hero-header-text"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25, duration: 1 }}        
-          >
-            {"</div>"} 
-          </motion.h1>
-          
         </div>
       </div>
 
       <div className='hero-moon-container'>
         <motion.div
-          style={{
-            width: "250px",
-            height: "250px",
-            backgroundColor: "#fdf6c9", // Moon color
-            borderRadius: "50%",
-            boxShadow: "0 0 10px rgba(255, 255, 200, 0.5)", // Initial glow
-            marginLeft: "auto", // Pushes it to the right
-            marginRight: "20px", // Add some spacing from the edge
-          }}
+          className='hero-moon'
           animate={{
             boxShadow: [
               "0 0 10px rgba(255, 255, 200, 0.5)", // Dim
@@ -93,14 +37,21 @@ const Hero = () => {
             repeatType: "reverse", // Loops smoothly
             ease: "easeInOut",
           }}
-        />
+        >
+          <img
+            src={github}
+            alt='github'
+            className='github-img'
+          />  
+        </motion.div>
+
       </div>
 
       <div className='hero-wolf-container'>
         <img
           src={wolf}
           alt='wolf'
-          style={{width: "300px", height: "230px", position: "absolute", bottom: "0", right: "-10px",}}
+          className='hero-wolf-image'
         />        
       </div>
 

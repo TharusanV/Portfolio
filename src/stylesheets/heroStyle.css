@@ -25,31 +25,17 @@
 .hero-header-text {
   font-weight: 500;
   color: rgb(0, 123, 255);
-  font-size: 40px;
- 
   line-height: normal; /* Default */
+  font-size: 20px;
 }
-
-@media (min-width: 475px) {
-  .hero-header-text {
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 640px) {
-  .hero-header-text {
-    font-size: 40px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-header-text {
-    font-size: 40px;
-  }
-}
-
 
 .hero-header-span{
+  color: rgb(255, 255, 255);
+}
+
+.hero-description-span{
+  padding-left: 10px;
+  padding-right: 10px;
   color: rgb(255, 255, 255);
 }
 
@@ -60,16 +46,16 @@
 
 .downIcon-container{
   position: absolute;
-  bottom: 8rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 1rem;
 }
 
 @media (min-width: 450px) {
   .downIcon-container {
-    bottom: 2.5rem;
+    bottom: 1rem;
   }
 }
 
@@ -101,6 +87,27 @@
 
 }
 
+.hero-moon{
+  width: 250px;
+  height: 250px;
+  background-color: #e6e4d4;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 200, 0.5); /*Initial glow*/
+  margin-left: auto; /*Pushes it to the right*/
+  margin-right: 20px; /*Add some spacing from the edge*/
+  position: relative;
+}
+
+.github-img{
+  position: absolute;
+  top: 20%;
+  left: 25px;
+  width: 80px;
+  height: 80px;
+}
+
+
+
 .hero-wolf-container{
   position: absolute;
   inset: 0px;
@@ -116,3 +123,54 @@
   gap: 1.25rem 
 
 }
+
+.hero-wolf-image{
+  width: 300px;
+  height: 230px;
+  position: absolute;
+  bottom: 0; 
+  right: -10px;
+}
+
+
+@media (min-width: 1024px) {
+  .hero-header-text {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-moon-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack items vertically for smaller screens */
+    padding-left: 0; /* Optional: remove padding for better centering */
+    padding-right: 0; /* Optional: remove padding for better centering */
+  }
+
+  .hero-moon {
+    width: 150px; 
+    height: 150px; 
+    margin-left: 0; 
+    margin-right: 0; 
+    box-shadow: 0 0 10px rgba(255, 255, 200, 0.5); 
+  }
+
+  .github-img{
+    position: absolute;
+    top: 15%;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+  }
+
+
+  .hero-wolf-image {
+    width: 200px;
+    height: 130px;
+    right: 50%;
+    transform: translateX(50%); /* Center the wolf */
+  }
+}
+
