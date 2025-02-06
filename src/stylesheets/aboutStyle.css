@@ -5,3 +5,41 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.about-intro-container{
+  position: absolute;
+  inset: 0px;
+  top: 80px;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.5rem; /* 24px */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem 
+}
+
+.about-subheader-text {
+  font-size: 1rem;
+  color: grey;
+  
+}
+
+.about-intro-text{
+  font-size: 17px;
+  
+  line-height: 30px;
+
+}
+
+.technologies-container{
+  margin-top: 10px;
+}
+
+.tech-logo-img{
+  width: 96px;
+  height: 96px;
+  margin-right: 20px;
+}

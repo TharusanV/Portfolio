@@ -8,13 +8,10 @@ function App() {
     <BrowserRouter>
       <div>
         <div>
-          <Navbar />
+          
           <Hero />
         </div>
         <About />
-        <Experience />
-        <Tech />
-        <Projects />
       </div>
     </BrowserRouter>
   )

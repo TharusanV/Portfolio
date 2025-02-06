@@ -55,6 +55,7 @@
   justify-content: center;
   align-items: center;
   bottom: 1rem;
+  z-index: 10;
 }
 
 @media (min-width: 450px) {
