@@ -1,17 +1,16 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Experience, Hero, Navbar, Tech, Projects} from "./components";
+import { About, Experience, Hero, Navbar, Tech, Projects, BootUp, Terminal} from "./components";
 
 function App() {
 
   return (
     <BrowserRouter>
       <div>
-        <div>
-          
-          <Hero />
-        </div>
-        <About />
+        <Routes>
+          <Route path="/" element={<BootUp />} />
+          <Route path="/terminal" element={<Terminal />} />
+        </Routes>
       </div>
     </BrowserRouter>
   )

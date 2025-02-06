@@ -4,6 +4,8 @@ import About from './About';
 import Tech from './Tech';
 import Experience from './Experience';
 import Projects from './Projects';
+import BootUp from './BootUp';
+import Terminal from './Terminal';
 
 export {
   Hero,
@@ -12,4 +14,6 @@ export {
   Tech,
   Experience,
   Projects,
+  BootUp,
+  Terminal,
 }

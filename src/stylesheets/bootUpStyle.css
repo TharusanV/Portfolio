@@ -1,0 +1,51 @@
+.reboot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #000000, #8B0000);
+
+
+}
+
+
+.reboot-box {
+  position: relative;
+  width: 450px;
+  height: 150px;
+  border: 4px solid red;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(20, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  overflow: hidden;
+}
+
+/* Text Styling */
+.reboot-text {
+  color: red;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px red;
+}
+
+.reboot-version{
+  color: rgba(255, 100, 100, 0.9);
+  font-size: 14px;
+  margin-top: 10px;
+  text-shadow: 0 0 10px rgba(255, 100, 100, 0.8);
+}
+
+.reboot-progress {
+  color: rgba(255, 100, 100, 0.9);
+  font-size: 14px;
+  margin-top: 10px;
+  text-shadow: 0 0 10px rgba(255, 100, 100, 0.5);
+}
