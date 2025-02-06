@@ -7,18 +7,9 @@ import { wolf, github } from "../assets";
 const Hero = () => {
   return (
     <section className='hero'>
-      <div className='hero-header-container'>
-        <div>
-          <motion.h1
-            className="hero-header-text"
-            initial={{ opacity: 0, y: 20 }} // Start hidden & slightly lower
-            animate={{ opacity: 1, y: 0 }} // Fade in & move up
-            transition={{ delay: 1, duration: 1, ease: "easeOut" }} // Smooth animation
-            style={{paddingLeft: "40px"}}
-          >
-            Hi, I'm Tharusan 
-          </motion.h1>
-        </div>
+      <div class="fog-container">
+        <div class="fog-img fog-img-first"></div>
+        <div class="fog-img fog-img-second"></div>
       </div>
 
       <div className='hero-moon-container'>
@@ -38,11 +29,6 @@ const Hero = () => {
             ease: "easeInOut",
           }}
         >
-          <img
-            src={github}
-            alt='github'
-            className='github-img'
-          />  
         </motion.div>
 
       </div>

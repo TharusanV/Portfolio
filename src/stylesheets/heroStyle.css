@@ -6,42 +6,46 @@
   margin-right: auto;
 }
 
-.hero-header-container{
+.fog-container {
   position: absolute;
-  inset: 0px;
-  top: 80px;
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem; /* 24px */
-  padding-right: 1.5rem; /* 24px */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1.25rem 
-
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.hero-header-text {
-  font-weight: 500;
-  color: rgb(0, 123, 255);
-  line-height: normal; /* Default */
-  font-size: 20px;
+.fog-img {
+  position: absolute;
+  height: 100vh;
+  width: 300vw;
+  z-index: 2;
 }
 
-.hero-header-span{
-  color: rgb(255, 255, 255);
+.fog-img-first {
+  background: url("../assets/fog-1.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 60s linear infinite;
 }
 
-.hero-description-span{
-  padding-left: 10px;
-  padding-right: 10px;
-  color: rgb(255, 255, 255);
+.fog-img-second {
+  background: url("../assets/fog-2.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 30s linear infinite;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
 
-
-
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
+}
 
 
 .downIcon-container{
@@ -81,30 +85,22 @@
   padding-left: 1.5rem; /* 24px */
   padding-right: 1.5rem; /* 24px */
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1.25rem 
+  justify-content: center; /* Centers horizontally */
+
+  gap: 1.25rem;
 
 }
 
 .hero-moon{
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   background-color: #e6e4d4;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 255, 200, 0.5); /*Initial glow*/
-  margin-left: auto; /*Pushes it to the right*/
-  margin-right: 20px; /*Add some spacing from the edge*/
   position: relative;
+ 
 }
 
-.github-img{
-  position: absolute;
-  top: 20%;
-  left: 25px;
-  width: 80px;
-  height: 80px;
-}
 
 
 
@@ -125,52 +121,20 @@
 }
 
 .hero-wolf-image{
-  width: 300px;
-  height: 230px;
+  width: 360px;
+  height: 260px;
   position: absolute;
   bottom: 0; 
-  right: -10px;
+  right: 45%;
+  transform: translateX(50%);
 }
 
 
 @media (min-width: 1024px) {
-  .hero-header-text {
-    font-size: 50px;
-  }
+
 }
 
 @media (max-width: 800px) {
-  .hero-moon-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack items vertically for smaller screens */
-    padding-left: 0; /* Optional: remove padding for better centering */
-    padding-right: 0; /* Optional: remove padding for better centering */
-  }
-
-  .hero-moon {
-    width: 150px; 
-    height: 150px; 
-    margin-left: 0; 
-    margin-right: 0; 
-    box-shadow: 0 0 10px rgba(255, 255, 200, 0.5); 
-  }
-
-  .github-img{
-    position: absolute;
-    top: 15%;
-    left: 10px;
-    width: 60px;
-    height: 60px;
-  }
-
-
-  .hero-wolf-image {
-    width: 200px;
-    height: 130px;
-    right: 50%;
-    transform: translateX(50%); /* Center the wolf */
-  }
+  
 }
 
