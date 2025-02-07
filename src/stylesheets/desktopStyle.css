@@ -4,9 +4,48 @@
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  z-index: 15;
+  z-index: 23;
   
+}
+
+.shortcut-container{
   display: flex;
   flex-direction: column; 
   gap: 5px; 
+  width: fit-content;
+}
+
+.tabs-container {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  width: 600px;
+  position: relative;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: black;
+  width: 100%;
+}
+
+.close-btn {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 1px 5px;
+  height: 100%;
+  
 }

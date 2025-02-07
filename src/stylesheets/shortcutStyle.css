@@ -2,8 +2,8 @@
   position: relative;
   display: inline-block;
   text-align: center;
-  width: 64px;  /* Adjust this width depending on your preference */
-  min-height: 64px; /* Adjust this height depending on your preference */
+  width: 64px; 
+  min-height: 64px; 
   margin: 10px;
 }
 
