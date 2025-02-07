@@ -90,11 +90,11 @@ const Terminal = () => {
       if (inputValue.trim() !== '') {
         if (inputValue === "help") {
           const message7 = `Available commands:
-          start           access GUI
-          reboot          restart the site
+                            ---------------start     -      access GUI
+                            ---------------reboot    -     restart the site
           `;
 
-          if(history.length == 0){
+          if(history.length === 0){
             setHistory((prevHistory) => [...prevHistory, `${message7}`]);
           }
           else{
