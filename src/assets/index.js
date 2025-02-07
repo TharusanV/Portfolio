@@ -6,6 +6,11 @@ import java from "./java.png"
 import cLogo from "./c++.png"
 import python from './python.png'
 import reactLogo from './react.png'
+import searchIcon from './searchIcon.svg'
+import shortcutIcon from './shortcut_arrow.webp'
+import aboutIcon from './aboutIcon.png'
+import educationIcon from './education.png'
+import projectIcon from './project.png'
 
 export {
   menu,
@@ -15,5 +20,10 @@ export {
   java,
   cLogo,
   python,
-  reactLogo
+  reactLogo,
+  searchIcon,
+  shortcutIcon,
+  aboutIcon,
+  educationIcon,
+  projectIcon,
 };

@@ -7,6 +7,8 @@ import Projects from './Projects';
 import BootUp from './BootUp';
 import Terminal from './Terminal';
 import Computer from './Computer';
+import Desktop from './Desktop';
+import Shortcut from './Shortcut.jsx' 
 
 export {
   Hero,
@@ -18,4 +20,6 @@ export {
   BootUp,
   Terminal,
   Computer,
+  Desktop,
+  Shortcut,
 }

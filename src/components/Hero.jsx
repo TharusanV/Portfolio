@@ -7,9 +7,9 @@ import { wolf, github } from "../assets";
 const Hero = () => {
   return (
     <>
-      <div class="fog-container">
-        <div class="fog-img fog-img-first"></div>
-        <div class="fog-img fog-img-second"></div>
+      <div className="fog-container">
+        <div className="fog-img fog-img-first"></div>
+        <div className="fog-img fog-img-second"></div>
       </div>
 
       <div className='hero-moon-container'>
