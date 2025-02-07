@@ -6,6 +6,7 @@ import Experience from './Experience';
 import Projects from './Projects';
 import BootUp from './BootUp';
 import Terminal from './Terminal';
+import Computer from './Computer';
 
 export {
   Hero,
@@ -16,4 +17,5 @@ export {
   Projects,
   BootUp,
   Terminal,
+  Computer,
 }

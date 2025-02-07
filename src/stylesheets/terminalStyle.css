@@ -15,3 +15,49 @@
   white-space: pre-line;
 
 }
+
+.terminal-lines-text {
+  font-family: "Fira Code", "Consolas", "Courier New", monospace;
+  font-size: 16px;
+  color: #ff2f00; 
+  padding-left: 15px;
+  line-height: 1.1rem; 
+  white-space: pre-line;
+
+}
+
+
+
+
+
+.terminal-writing-container {
+  display: flex;
+  max-width: 80rem; 
+  align-items: center; /* Vertically align the text and input */
+  flex-wrap: wrap; /* Allow items to wrap onto a new line */
+  font-family: "Fira Code", "Consolas", "Courier New", monospace;
+  font-size: 16px;
+  color: #ff2f00;
+  padding-left: 15px;
+}
+
+.terminal-writing-container input {
+  font-family: "Fira Code", "Consolas", "Courier New", monospace;
+  font-size: 16px;
+  color: #ff2f00;
+  border: none;
+  outline: none;
+  background: transparent;
+  height: 1.1rem; 
+  flex-grow: 1; /* Let the input take up the remaining space */
+  margin-left: 8px; 
+  max-width: 5rem; 
+}
+
+
+
+::placeholder{
+  color: #ff2f00;
+}
+
+

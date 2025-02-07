@@ -6,7 +6,7 @@ import { wolf, github } from "../assets";
 
 const Hero = () => {
   return (
-    <section className='hero'>
+    <>
       <div class="fog-container">
         <div class="fog-img fog-img-first"></div>
         <div class="fog-img fog-img-second"></div>
@@ -61,7 +61,7 @@ const Hero = () => {
 
 
 
-    </section>
+    </>
   )
 }
 
