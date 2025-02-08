@@ -13,7 +13,7 @@ const Hero = () => {
       </div>
 
       <div style={{position: "absolute", zIndex: 1, width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-        <h1>Work in progress</h1>
+        <h1>Updates coming soon!</h1>
       </div>
 
       <div className='hero-moon-container'>
