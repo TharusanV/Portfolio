@@ -6,6 +6,10 @@
   background-color: transparent;
   color: black;
   border: 1px solid #000000;
+  
+  max-height: 80vh;
+  overflow-y: scroll;
+
 }
 
 .about-container{

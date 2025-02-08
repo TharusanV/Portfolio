@@ -1,0 +1,82 @@
+.project {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; 
+  margin: 0 auto; 
+  padding: 20px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid #000000;
+  max-height: 80vh;
+  overflow-y: auto; 
+}
+
+.allproject-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); 
+  max-width: 1000px; 
+  gap: 16px; 
+  justify-content: center;
+  align-items: start;
+  padding: 10px;
+}
+
+
+@media (min-width: 1200px) {
+  .allproject-container {
+    grid-template-columns: repeat(4, 1fr); /* Max 4 items per row */
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 800px) { 
+  .allproject-container {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 799px) and (min-width: 500px) { 
+  .allproject-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 499px) { 
+  .allproject-container {
+    grid-template-columns: repeat(1, 1fr); 
+  }
+}
+
+.project-container {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-container:hover {
+  transform: scale(1.05);
+}
+
+.project-container img {
+  width: 100%; 
+  height: auto; 
+  max-height: 400px;
+  object-fit: cover; 
+}
+
+.title {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  width: max-content;
+}

@@ -16,25 +16,20 @@ const Terminal = () => {
   Who are you?
   Oh...you must be the guest he was talking about.
   Apologies, give me a second as I switch to the guest access
-  In the meantime, here is a message he left for you
-  ...
-  `;  
+  In the meantime, here is a message he left for you`;  
 
-  const message2 = `
-  ------------------------------------------------------------
+  const message2 = `------------------------------------------------------------
   ////////////////////////////////////////////////////////////
   ------------------------------------------------------------
-
   `;
 
   const message3 = `Hello there! My name is Tharusan 
   I'm a computer science graduate
   and this is my portfolio site
-  Feel free to give me any feedback, take care :)
-  ...
-  `;  
+  Feel free to give me any feedback, take care :)`;  
 
-  const message4 = `To see available commands
+  const message4 = `
+  To see available commands
   type 'help' and hit ENTER or RETURN
 
   `;
@@ -90,17 +85,22 @@ const Terminal = () => {
       if (inputValue.trim() !== '') {
         if (inputValue === "help") {
           setHistory((prevHistory) => [...prevHistory, <>
-            <span>Available commands:</span><br/>
-            <span style={{marginLeft: "20px"}}>start</span><span style={{marginLeft: "40px"}}></span><br/>
+            <span>{message5} {inputValue}</span><br/><br/>
+            <span>Available commands:</span><br/> 
+            <span style={{marginLeft: "20px"}}>start</span><span style={{marginLeft: "52px"}}>access GUI</span><br/>
             <span style={{marginLeft: "20px"}}>reboot</span><span style={{marginLeft: "40px"}}>restart the site</span><br/>
             <br/>
           </>]);
         }
         else if(inputValue === "start"){
           navigate("/computer");
-        } 
+        }
+        else if(inputValue === "reboot"){
+          navigate("/");
+        }  
         else {
           setHistory((prevHistory) => [...prevHistory, <>
+            <span>{message5} {inputValue}</span><br/>
             <span>command not found: {inputValue}</span><br/>
             <span>to see available commands, use 'help'</span><br/>
             <br/>
@@ -111,7 +111,6 @@ const Terminal = () => {
       else{
         setHistory((prevHistory) => [...prevHistory, <>
           <span>{message5}</span><br/>
-          <br/>
         </>]);
       }
 

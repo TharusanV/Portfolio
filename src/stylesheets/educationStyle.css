@@ -1,0 +1,16 @@
+.education{
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: black;
+  border: 1px solid #000000;
+  max-height: 80vh;
+  overflow-y: scroll;
+
+}
+
+.education-container{
+  padding: 5px;
+}

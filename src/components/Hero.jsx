@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="fog-img fog-img-second"></div>
       </div>
 
-      <div style={{position: "absolute", zIndex: 100, width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+      <div style={{position: "absolute", zIndex: 1, width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
         <h1>Work in progress</h1>
       </div>
 

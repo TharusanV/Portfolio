@@ -6,7 +6,7 @@ import Shortcut from './Shortcut';
 
 import { aboutIcon, educationIcon, projectIcon, programmingIcon } from "../assets";
 
-import { About, Tech, Tab} from "../components";
+import { About, Tech, Tab, Education, Projects} from "../components";
 
 
 const Desktop = () => {
@@ -15,9 +15,9 @@ const Desktop = () => {
   
   const allShortcuts = [
     { id: 1, name: "About Me", icon: aboutIcon, comp: <About/>},
-    { id: 2, name: "Education", icon: educationIcon, comp: <About/>},
+    { id: 2, name: "Education", icon: educationIcon, comp: <Education/>},
     { id: 3, name: "Tech", icon: programmingIcon, comp: <Tech/>},
-    { id: 4, name: "Projects", icon: projectIcon, comp: <About/>},
+    { id: 4, name: "Projects", icon: projectIcon, comp: <Projects/>},
   ];
 
   const handleShortcutClick = (shortcut) => {

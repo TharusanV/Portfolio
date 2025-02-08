@@ -12,6 +12,9 @@ import aboutIcon from './aboutIcon.png'
 import educationIcon from './education.png'
 import projectIcon from './project.png'
 import programmingIcon from './programming.png'
+import fyp from './fyp-project.gif'
+import game from './flfGame.png'
+import rss from './rss.png'
 
 export {
   menu,
@@ -28,4 +31,7 @@ export {
   educationIcon,
   projectIcon,
   programmingIcon,
+  fyp,
+  game,
+  rss,
 };
