@@ -5,6 +5,9 @@
   padding: 0;
   background-color: transparent;
   color: black;
-  border-style: solid;
+  border: 1px solid #000000;
 }
 
+.about-container{
+  padding: 5px;
+}

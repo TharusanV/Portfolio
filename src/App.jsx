@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Experience, Hero, Navbar, Tech, Projects, BootUp, Terminal, Computer} from "./components";
+import { BootUp, Terminal, Computer} from "./components";
 
 function App() {
 

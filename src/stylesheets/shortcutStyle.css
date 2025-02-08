@@ -13,6 +13,7 @@
 }
 
 .shortcut-icon {
+  padding-top: 2px;
   width: 48px;  /* Size of the icon */
   height: 48px; /* Size of the icon */
 }

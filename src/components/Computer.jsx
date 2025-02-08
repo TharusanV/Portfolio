@@ -12,7 +12,7 @@ const Computer = () => {
     <section className='computer'>
       <Hero/>
 
-     <Desktop />
+      <Desktop />
 
       <Taskbar/>
     </section>

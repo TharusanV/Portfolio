@@ -11,6 +11,7 @@ import shortcutIcon from './shortcut_arrow.webp'
 import aboutIcon from './aboutIcon.png'
 import educationIcon from './education.png'
 import projectIcon from './project.png'
+import programmingIcon from './programming.png'
 
 export {
   menu,
@@ -26,4 +27,5 @@ export {
   aboutIcon,
   educationIcon,
   projectIcon,
+  programmingIcon,
 };

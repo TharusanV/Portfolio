@@ -89,42 +89,30 @@ const Terminal = () => {
 
       if (inputValue.trim() !== '') {
         if (inputValue === "help") {
-          const message7 = `Available commands:
-                            ---------------start     -      access GUI
-                            ---------------reboot    -     restart the site
-          `;
-
-          if(history.length === 0){
-            setHistory((prevHistory) => [...prevHistory, `${message7}`]);
-          }
-          else{
-            setHistory((prevHistory) => [...prevHistory, `\n${message7}`]);
-          }
+          setHistory((prevHistory) => [...prevHistory, <>
+            <span>Available commands:</span><br/>
+            <span style={{marginLeft: "20px"}}>start</span><span style={{marginLeft: "40px"}}></span><br/>
+            <span style={{marginLeft: "20px"}}>reboot</span><span style={{marginLeft: "40px"}}>restart the site</span><br/>
+            <br/>
+          </>]);
         }
         else if(inputValue === "start"){
           navigate("/computer");
         } 
         else {
-          const message6 = `command not found: ${inputValue}
-          to see available commands, use 'help'
-          `;
-  
-          if(history.length == 0){
-            setHistory((prevHistory) => [...prevHistory, `${message6}`]);
-          }
-          else{
-            setHistory((prevHistory) => [...prevHistory, `\n${message6}`]);
-          }
+          setHistory((prevHistory) => [...prevHistory, <>
+            <span>command not found: {inputValue}</span><br/>
+            <span>to see available commands, use 'help'</span><br/>
+            <br/>
+          </>]);
         }
       }
 
       else{
-        if(history.length == 0){
-          setHistory((prevHistory) => [...prevHistory, `${message5}`]);
-        }
-        else{
-          setHistory((prevHistory) => [...prevHistory, `\n${message5}`]);
-        }
+        setHistory((prevHistory) => [...prevHistory, <>
+          <span>{message5}</span><br/>
+          <br/>
+        </>]);
       }
 
       setInputValue(""); // Clear input after submission 

@@ -4,9 +4,10 @@ import '../stylesheets/desktopStyle.css'
 
 import Shortcut from './Shortcut';
 
-import { aboutIcon, educationIcon, projectIcon } from "../assets";
+import { aboutIcon, educationIcon, projectIcon, programmingIcon } from "../assets";
 
-import { About} from "../components";
+import { About, Tech, Tab} from "../components";
+
 
 const Desktop = () => {
 
@@ -15,7 +16,8 @@ const Desktop = () => {
   const allShortcuts = [
     { id: 1, name: "About Me", icon: aboutIcon, comp: <About/>},
     { id: 2, name: "Education", icon: educationIcon, comp: <About/>},
-    { id: 3, name: "Projects", icon: projectIcon, comp: <About/>},
+    { id: 3, name: "Tech", icon: programmingIcon, comp: <Tech/>},
+    { id: 4, name: "Projects", icon: projectIcon, comp: <About/>},
   ];
 
   const handleShortcutClick = (shortcut) => {
@@ -24,9 +26,7 @@ const Desktop = () => {
     );
   };
 
-  const closeTab = (id) => {
-    setOpenedTabs((prevTabs) => prevTabs.filter((tab) => tab.id !== id));
-  };
+
   
   return (
     <div className='desktop'>
@@ -38,13 +38,7 @@ const Desktop = () => {
 
       <div className='tabs-container'>
         {openedTabs.map((tab) => (
-          <div key={tab.id} className='tab'>
-            <div className='tab-header'>
-              <span>{tab.name}</span>
-              <button className='close-btn' onClick={() => closeTab(tab.id)}>X</button>
-            </div>
-            <div className='tab-content'>{tab.comp}</div>
-          </div>
+          <Tab key={tab.id} tab={tab} setOpenedTabs={setOpenedTabs}/>
         ))}
       </div>
 

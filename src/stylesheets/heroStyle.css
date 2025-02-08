@@ -79,7 +79,7 @@
 .hero-moon-container{
   position: absolute;
   inset: 0px;
-  top: 80px;
+  top: 20px;
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
@@ -93,6 +93,7 @@
 }
 
 .hero-moon{
+  margin-top: 30px;
   width: 150px;
   height: 150px;
   background-color: #e6e4d4;
