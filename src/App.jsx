@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
-import { BootUp, Terminal, Computer} from "./components";
+import { BootUp, Terminal, Computer } from "./components";
 
 function App() {
-
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <Routes>
           <Route path="/" element={<BootUp />} />
@@ -13,8 +12,8 @@ function App() {
           <Route path="/computer" element={<Computer />} />
         </Routes>
       </div>
-    </BrowserRouter>
-  )
+    </HashRouter>
+  );
 }
 
-export default App
+export default App;
