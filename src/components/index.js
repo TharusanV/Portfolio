@@ -9,6 +9,7 @@ import Computer from './Computer';
 import Desktop from './Desktop';
 import Shortcut from './Shortcut.jsx' 
 import Tab from './Tab.jsx';
+import Calendar from './Calendar.jsx';
 
 export {
   Hero,
@@ -22,4 +23,6 @@ export {
   Desktop,
   Shortcut,
   Tab,
+  Calendar,
+  
 }
