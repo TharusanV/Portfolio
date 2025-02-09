@@ -10,6 +10,7 @@ import Desktop from './Desktop';
 import Shortcut from './Shortcut.jsx' 
 import Tab from './Tab.jsx';
 import Calendar from './Calendar.jsx';
+import StartMenu from './StartMenu.jsx';
 
 export {
   Hero,
@@ -24,5 +25,6 @@ export {
   Shortcut,
   Tab,
   Calendar,
-  
+  StartMenu,
+
 }

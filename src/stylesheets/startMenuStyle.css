@@ -1,0 +1,14 @@
+.startmenu {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  z-index: 50;
+}
+
+.startmenu-container {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  padding-top: 0;
+}
