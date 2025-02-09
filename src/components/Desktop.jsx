@@ -9,9 +9,9 @@ import { aboutIcon, educationIcon, projectIcon, programmingIcon } from "../asset
 import { About, Tech, Tab, Education, Projects} from "../components";
 
 
-const Desktop = () => {
+const Desktop = ({openedTabs, setOpenedTabs}) => {
 
-  const [openedTabs, setOpenedTabs] = useState([]);
+  
   
   const allShortcuts = [
     { id: 1, name: "About Me", icon: aboutIcon, comp: <About/>},

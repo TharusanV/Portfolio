@@ -9,7 +9,7 @@ import { searchIcon } from "../assets";
 import Calendar from "./Calendar";
 import StartMenu from "./StartMenu";
 
-const Taskbar = () => {
+const Taskbar = ({openedTabs, setOpenedTabs}) => {
 
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const popupCalendarRef = useRef(null);
@@ -100,7 +100,7 @@ const Taskbar = () => {
 
       {isStarMenuOpen && (
         <div ref={starMenuContainerRef}>
-          <StartMenu/>
+          <StartMenu openedTabs={openedTabs} setOpenedTabs={setOpenedTabs}/>
         </div>
       )}
 
