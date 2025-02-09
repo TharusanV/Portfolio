@@ -9,7 +9,7 @@ import { aboutIcon, educationIcon, projectIcon, programmingIcon } from "../asset
 
 import { About, Tech, Tab, Education, Projects} from "../components";
 
-const StartMenu = ({openedTabs, setOpenedTabs}) => {
+const StartMenu = ({openedTabs, setOpenedTabs, setIsStarMenuOpen}) => {
   const navigate = useNavigate();
 
   const handleShutdown = () =>{
@@ -27,6 +27,8 @@ const StartMenu = ({openedTabs, setOpenedTabs}) => {
     setOpenedTabs((prevTabs) =>
       prevTabs.some((tab) => tab.id === menuItem.id) ? prevTabs : [...prevTabs, menuItem]
     );
+
+    setIsStarMenuOpen(false);
   };
 
 
