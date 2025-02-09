@@ -8,14 +8,14 @@ const Calendar = () => {
     const interval = setInterval(() => {
       setCurrentDate(new Date());
     }, 60000); // Update every minute
+
+
     return () => clearInterval(interval);
   }, []);
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
   const today = currentDate.getDate();
-  const currentMonth = currentDate.getMonth();
-  const currentYear = currentDate.getFullYear();
 
   const firstDayOfMonth = (new Date(year, month, 1).getDay() + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
