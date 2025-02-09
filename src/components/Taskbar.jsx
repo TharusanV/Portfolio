@@ -13,47 +13,40 @@ const Taskbar = () => {
 
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const popupCalendarRef = useRef(null);
+  const calendarContainerRef = useRef(null);
 
   const [isStarMenuOpen, setIsStarMenuOpen] = useState(false);
   const popupStarMenuRef = useRef(null);
+  const starMenuContainerRef = useRef(null);
 
   const toggleCalendarPopup = () => {
-    if(isCalendarOpen){
-      setIsCalendarOpen(false);
-    }
-    else{
-      setIsCalendarOpen(true);
-    }
+    setIsCalendarOpen(!isCalendarOpen);  
   };
 
   const toggleStarMenuPopup = () => {
-    if(isStarMenuOpen){
-      setIsStarMenuOpen(false);
-    }
-    else{
-      setIsStarMenuOpen(true);
-    }
+    setIsStarMenuOpen(!isStarMenuOpen); 
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (popupCalendarRef.current && !popupCalendarRef.current.contains(event.target)) {
+      // Close calendar if clicked outside
+      if (popupCalendarRef.current && !popupCalendarRef.current.contains(event.target) && !calendarContainerRef.current.contains(event.target)) {
         setIsCalendarOpen(false);
       }
 
-      if(popupStarMenuRef.current && !popupStarMenuRef.current.contains(event.target)){
+      if (popupStarMenuRef.current && !popupStarMenuRef.current.contains(event.target) && !starMenuContainerRef.current.contains(event.target)) {
         setIsStarMenuOpen(false);
       }
-
     };
 
+    // event listener only if either popup is open
     if (isCalendarOpen || isStarMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
-    } 
-    else {
+    } else {
       document.removeEventListener("mousedown", handleClickOutside);
     }
 
+    // Cleanup the event listener when component unmounts or state changes
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -100,13 +93,13 @@ const Taskbar = () => {
       </section>
 
       {isCalendarOpen && (
-        <div>
+        <div ref={calendarContainerRef}>
           <Calendar/>
         </div>
       )}  
 
       {isStarMenuOpen && (
-        <div>
+        <div ref={starMenuContainerRef}>
           <StartMenu/>
         </div>
       )}

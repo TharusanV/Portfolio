@@ -21,6 +21,7 @@ import poke from './poke.png'
 import media from './media-review.png'
 import eCommerce from './e-commerce.png'
 import fighting from './fight.png'
+import offIcon from './off-button.png'
 
 export {
   menu,
@@ -45,4 +46,5 @@ export {
   media,
   eCommerce,
   fighting,
+  offIcon,
 };
