@@ -2,13 +2,31 @@
   display: flex;
   position: absolute;
   bottom: 30px;
-  right: 0;
+  left: 0;
   z-index: 50;
 }
 
 .startmenu-container {
+  display: flex;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
   padding-top: 0;
+
+  height: 420px;
+  width: 300px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column; 
+  gap: 5px; 
+  width: 60px;
+  background-color: red;
+  height: 100%;
+}
+
+.main-panel {
+  flex-grow: 1; 
+  background-color: lightblue; 
+  height: 100%;
 }

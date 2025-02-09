@@ -7,11 +7,15 @@ import '../stylesheets/taskbarStyle.css'
 import { searchIcon } from "../assets";
 
 import Calendar from "./Calendar";
+import StartMenu from "./StartMenu";
 
 const Taskbar = () => {
 
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const popupCalendarRef = useRef(null);
+
+  const [isStarMenuOpen, setIsStarMenuOpen] = useState(false);
+  const popupStarMenuRef = useRef(null);
 
   const toggleCalendarPopup = () => {
     if(isCalendarOpen){
@@ -20,7 +24,15 @@ const Taskbar = () => {
     else{
       setIsCalendarOpen(true);
     }
-    
+  };
+
+  const toggleStarMenuPopup = () => {
+    if(isStarMenuOpen){
+      setIsStarMenuOpen(false);
+    }
+    else{
+      setIsStarMenuOpen(true);
+    }
   };
 
   useEffect(() => {
@@ -28,9 +40,14 @@ const Taskbar = () => {
       if (popupCalendarRef.current && !popupCalendarRef.current.contains(event.target)) {
         setIsCalendarOpen(false);
       }
+
+      if(popupStarMenuRef.current && !popupStarMenuRef.current.contains(event.target)){
+        setIsStarMenuOpen(false);
+      }
+
     };
 
-    if (isCalendarOpen) {
+    if (isCalendarOpen || isStarMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     } 
     else {
@@ -40,7 +57,7 @@ const Taskbar = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isCalendarOpen]);
+  }, [isCalendarOpen, isStarMenuOpen]);
 
   /////////////////////////////////////////////////////////////////
 
@@ -66,7 +83,7 @@ const Taskbar = () => {
     <>
       <section className='taskbar'>
         <div className='farLeft-side-container'>
-          <div className="item-container">
+          <div className="item-container" ref={popupStarMenuRef} onClick={toggleStarMenuPopup}>
             <span className="item">TV</span>
           </div>
           
@@ -88,8 +105,14 @@ const Taskbar = () => {
         </div>
       )}  
 
-      
-       
+      {isStarMenuOpen && (
+        <div>
+          <StartMenu/>
+        </div>
+      )}
+
+
+
     </>
 
   )

@@ -3,7 +3,16 @@ import "../stylesheets/startMenuStyle.css";
 
 const StartMenu = () => {
   return (
-    <div>StartMenu</div>
+    <div id="startmenu" className="startmenu">
+      <div className="startmenu-container">
+        <div className="sidebar">
+
+        </div>
+        <div className="main-panel">
+
+        </div>
+      </div>
+    </div>
   )
 }
 
