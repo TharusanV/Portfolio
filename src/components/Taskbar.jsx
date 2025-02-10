@@ -27,6 +27,15 @@ const Taskbar = ({openedTabs, setOpenedTabs}) => {
     setIsStarMenuOpen(!isStarMenuOpen); 
   };
 
+  /* So '.?' is known as the 'Optional chaining operator' 
+  This operator allows you to safely access deeply nested properties of an object without having to explicitly check for the existence of 
+  each property in the chain. If any property in the chain is null or undefined, the expression short-circuits and 
+  returns undefined instead of throwing an error. 
+  
+  In my case thats good as I use it for what you see below where if the user clicks outside the bounds of the pop-up, it doesn't throw
+  out a null error. Give I want it to have the option to be null if the use is clicking on nothing as to close the window.
+  */
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (

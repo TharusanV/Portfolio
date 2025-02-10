@@ -15,3 +15,11 @@
 .about-container{
   padding: 5px;
 }
+
+.link-item{
+  text-decoration: underline;
+}
+
+.link-item:hover{
+  cursor: pointer;
+}
