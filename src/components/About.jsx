@@ -31,9 +31,16 @@ const About = () => {
 
 
         <h3>What made you interested in technology?</h3>
-        <p>Growing up I was facinated by futuristic media (e.g. Matrix, Blade Runner) which led me down the path of wanting to persue tech career.
-          This then lead me to take up computer science in my GCSE's and continuing it through my A-Levels and my degree.<br/>
-          Now I am looking to continue my development by getting real-world experience. Working on projects that aim to help others and propel the industry forward. <br/>
+        <p>Growing up, I was captivated by futuristic media like The Matrix and Blade Runner, which sparked my fascination with technology 
+          and its potential to shape the world. This curiosity drove me to explore how computers work, 
+          leading me to pursue Computer Science from my GCSEs through my A-Levels and ultimately my degree.<br/> 
+          
+          <br/>
+
+          Beyond academics, I've immersed myself in personal projects, coding challenges, and emerging technologies 
+          to deepen my understanding in this ever-growing field. Now, I'm eager to take the next step by gaining hands-on experience in the industry. 
+          I'm looking for opportunities to contribute to innovative projects, collaborate with like-minded individuals, 
+          and continue growing as a developer, problem-solver, and person.<br/>
           <br/>
         </p>
       
